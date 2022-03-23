@@ -262,7 +262,7 @@ def show_annotated_image(img, boxes, labels, scores, class_ids, score_threshold=
         # draw polygons representing the corners of a transformation
         transform_corners = transform_corners[good_ids].cpu()
 
-    vis_image(img,
+    img = vis_image(img,
               showfig=showfig,
               boxes=boxes,
               scores=scores,
@@ -271,7 +271,7 @@ def show_annotated_image(img, boxes, labels, scores, class_ids, score_threshold=
               image_id=image_id,
               polygons=transform_corners
               )
-    return
+    return img
 
 
 def vis_image(img, boxes=None, label_names=None, scores=None, colors=None, image_id=None, polygons=None,showfig=False):
